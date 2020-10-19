@@ -26,6 +26,10 @@ namespace Practica1.Models
         public  int Age { get; set; }
 
         [Required(ErrorMessage="Campo Obligatorio")]
+        [Display(Name="DNI")]
+        public  int DNI { get; set; }
+
+        [Required(ErrorMessage="Campo Obligatorio")]
         [Display(Name="Genero")]
         public String Gender { get; set; }
 
