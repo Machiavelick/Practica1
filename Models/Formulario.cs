@@ -1,20 +1,33 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Practica1.Models
 {
     public class Formulario
     {
-        public String Nombre { get; set; }
+        [Required(ErrorMessage="Campo Obligatorio")]
+        [Display(Name="Nombre")]
+        public String Name { get; set; }
 
-        public String Apellido { get; set; }
+        [Required(ErrorMessage="Campo Obligatorio")]
+        [Display(Name="Apellido")]
+        public String LastName { get; set; }
 
-        public String Distrito { get; set; }
+        [Required(ErrorMessage="Campo Obligatorio")]
+        [Display(Name="Distrito")]
+        public String District { get; set; }
 
-        public  String Banco { get; set; }
+        [Required(ErrorMessage="Campo Obligatorio")]
+        [Display(Name="Banco")]
+        public  String Bank { get; set; }
 
-        public  int Edad { get; set; }
+        [Required(ErrorMessage="Campo Obligatorio")]
+        [Display(Name="Edad")]
+        public  int Age { get; set; }
 
-        public String Genero { get; set; }
+        [Required(ErrorMessage="Campo Obligatorio")]
+        [Display(Name="Genero")]
+        public String Gender { get; set; }
 
         public String Respuesta { get; set; }
 

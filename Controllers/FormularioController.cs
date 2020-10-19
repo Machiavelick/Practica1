@@ -25,8 +25,12 @@ namespace Practica1.Controllers
 
        [HttpPost]
        public IActionResult Registrar(Formulario objFormulario){
-           objFormulario.Respuesta ="Datos registrados";
-           return View("index", objFormulario);
+            if(ModelState.IsValid)
+            {
+                 objFormulario.Respuesta ="Datos registrados";
+            }
+            return View("index", objFormulario);
+            
        }
     }
 }

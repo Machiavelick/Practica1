@@ -1,47 +1,54 @@
 @model Practica1.Models.Formulario
 
+
 @{
     ViewData["Title"] = "Bono Covid-19";
 }
+<div class="row">
+    <div class="col-md-4">
+            <h1 class="display-4">Registro</h1>
+            <form asp-controller="Formulario" asp-action="Registrar">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="from-group">
+                    <label asp-for="Name" class=" control-label"></label>
+                    <input asp-for="Name" class=" control-label"/>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                
+                <div class="from-group">
+                    <label asp-for="LastName" class=" control-label"></label>
+                    <input asp-for="LastName" class=" control-label"/>
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
 
-<div class="text-center">
-    <h1 class="display-4">Registro</h1>
-    <form asp-controller="Formulario" asp-action="Registrar">
-        <label>Nombre</label>
-        <input asp-for="Nombre">
-        <br/>
+                <div class="from-group">
+                    <label asp-for="District" class=" control-label"></label>
+                    <input asp-for="District" class=" control-label"/>
+                    <span asp-validation-for="District" class="text-danger"></span>
+                </div>
 
-        <label>Apellido</label>
-        <input asp-for="Apellido">
-        <br/>
+                <label>@Html.DisplayNameFor(model => model.Bank)</label>
+                <select asp-for="Bank">
+                    <option>Interbank</option>
+                    <option>BCP</option>
+                    <option>BBVA</option>
+                    <option>MiBanco</option>
+                </select>
+                <br/>
+                
+                <label>@Html.DisplayNameFor(model => model.Age)</label>
+                <input asp-for="Age">
+                <br/>
+                <input type="radio" id="male" asp-for="Gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" asp-for="Gender" value="female">
+                <label for="female">Female</label><br>
 
-        <label>Distrito</label>
-        <input asp-for="Distrito">
-        <br/>
-
-        <label>Banco</label>
-        <select asp-for="Banco">
-            <option>Interbank</option>
-            <option>BCP</option>
-            <option>BBVA</option>
-            <option>MiBanco</option>
-        </select>
-        <br/>
+                <input type="submit" value="Registrar"/>
         
-        <label>Edad</label>
-        <input asp-for="Edad">
-        <br/>
-        <input type="radio" id="male" asp-for="Genero" value="male">
-        <label for="male">Male</label><br>
-        <input type="radio" id="female" asp-for="Genero" value="female">
-        <label for="female">Female</label><br>
+            </form>
+            <td>@Html.DisplayNameFor(model => model.Respuesta)</td>
 
-        <input type="submit" value="Registrar"/>
-        
-    </form>
-
-    <td>@Html.DisplayNameFor(model => model.Respuesta)</td>
-    <td>@Html.DisplayTextFor(model => model.Respuesta)</td>
-    
-
+    </div>
 </div>
+
