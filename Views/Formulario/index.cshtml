@@ -29,18 +29,15 @@
 
                 <label>@Html.DisplayNameFor(model => model.Bank)</label>
                 <select asp-for="Bank">
-                    <option>Interbank</option>
-                    <option>BCP</option>
-                    <option>BBVA</option>
-                    <option>MiBanco</option>
+                    <option value="Interbank">Interbank</option>
+                    <option value="BCP">BCP</option>
+                    <option value="BBVA">BBVA</option>
+                    <option value="MiBanco">MiBanco</option>
                 </select>
                 <br/>
                 
                 <label>@Html.DisplayNameFor(model => model.Age)</label>
                 <input asp-for="Age">
-                <br/>
-                <label>@Html.DisplayNameFor(model => model.DNI)</label>
-                <input asp-for="DNI">
                 <br/>
                 <input type="radio" id="male" asp-for="Gender" value="male">
                 <label for="male">Male</label><br>

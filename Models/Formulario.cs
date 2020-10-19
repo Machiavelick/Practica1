@@ -1,10 +1,19 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Practica1.Models
 {
+    [Table("t_persona")]
     public class Formulario
     {
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("id")]
+
+        public int ID {get; set;}
+
+
         [Required(ErrorMessage="Campo Obligatorio")]
         [Display(Name="Nombre")]
         public String Name { get; set; }
@@ -24,10 +33,6 @@ namespace Practica1.Models
         [Required(ErrorMessage="Campo Obligatorio")]
         [Display(Name="Edad")]
         public  int Age { get; set; }
-
-        [Required(ErrorMessage="Campo Obligatorio")]
-        [Display(Name="DNI")]
-        public  int DNI { get; set; }
 
         [Required(ErrorMessage="Campo Obligatorio")]
         [Display(Name="Genero")]
